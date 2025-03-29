@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2 id="greeting">Welcome!</h2>
+    <p id="greeting">This is the dashboard</p>
+    <script>
+      fetch("/dashboard")
+        .then((res) => res.text())
+        .then((data) => (document.getElementById("greeting").innerText = data))
+        .catch(() => (window.location.href = "/login.html"));
+    </script>
+  </body>
+</html>
